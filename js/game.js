@@ -6,12 +6,6 @@ const hole = new Image();
 const man = new Image();
 const codesford = new Image();
 
-// const stop = new Image();
-// stop.src = "img/buttons/stop.png";
-//
-// const play = new Image();
-// play.src = "img/buttons/play.png";
-
 //find canvas
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
@@ -175,8 +169,8 @@ function moveBackground () {
 
 //collision check
 const checkCollision = (barrierX, barrierY, image) => {
-  const collisionX = barrierX <= xPos + pig.width - speed && barrierX + image.width >= xPos + pig.width
-  const collisionY = barrierY <= yPos + pig.height - jumpDown;
+  const collisionX = barrierX <= xPos + pigWidth - speed && barrierX + image.width >= xPos + pigWidth
+  const collisionY = barrierY <= yPos + pigHeight - jumpDown;
   return collisionX && collisionY;
 }
 
@@ -185,8 +179,6 @@ function draw() {
   ctx.drawImage(background, background1X, background1Y);
   ctx.drawImage(background, background2X, background2Y);
   ctx.drawImage(pig, xPos, yPos, pigWidth, pigHeight);
-  // ctx.drawImage(stop, 60, 370);
-  // ctx.drawImage(play, 60, 250);
 
   //draw all barriers on canvas
   allBarriers.forEach((key) => {
