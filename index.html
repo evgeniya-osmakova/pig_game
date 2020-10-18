@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pig</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="loginScreen">
+            <form class="form" action="">
+                <div class="form_color">
+                    <div class="form_fields">
+                        <div class="inputBlock">
+                            <label for="login">Login</label>
+                            <input id="login" type="text" name="login" required>
+                        </div>
+                        <div class="inputBlock">
+                            <label for="password">Password</label>
+                            <input id="password" type="text" name="password" required>
+                        </div>
+                    </div>
+                    <input class="btn" type="submit" name="add" value="Login" />
+                </div>
+            </form>
+        </div>
+
+        <div id="occupationScreen">
+            <div class="title">Choose your occupation</div>
+            <div class="cards">
+                <div class="card" id="frond">
+                    <div class="img">
+                        <img class="img_occupation" src="img/occupation/frond.png" alt="frond">
+                    </div>
+                    <div class="label">
+                        Front-end developer
+                    </div>
+                </div>
+                <div class="card" id="back">
+                    <div class="img">
+                        <img class="img_occupation" src="img/occupation/back.png" alt="back">
+                    </div>
+                    <div class="label">
+                        Back-end developer
+                    </div>
+                </div>
+                <div class="card" id="qa">
+                    <div class="img">
+                        <img class="img_occupation" src="img/occupation/qa.png" alt="qa">
+                    </div>
+                    <div class="label">
+                        QA engineer
+                    </div>
+                </div>
+                <div class="card" id="designer">
+                    <div class="img">
+                        <img class="img_occupation" src="img/occupation/designer.png" alt="designer">
+                    </div>
+                    <div class="label">
+                        Designer
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="countryScreen">
+            <div class="title">Choose country</div>
+            <div class="cards">
+                <div class="card" id="australia">
+                    <div class="img">
+                        <img class="img_country" src="img/country/australia.png" alt="australia">
+                    </div>
+                    <div class="label">
+                        Australia
+                    </div>
+                </div>
+                <div class="card" id="canada">
+                    <div class="img">
+                        <img class="img_country" src="img/country/canada.png" alt="canada">
+                    </div>
+                    <div class="label">
+                        Canada
+                    </div>
+                </div>
+                <div class="card" id="sweden">
+                    <div class="img">
+                        <img class="img_country" src="img/country/sweden.png" alt="sweden">
+                    </div>
+                    <div class="label">
+                        Sweden
+                    </div>
+                </div>
+                <div class="card" id="usa">
+                    <div class="img">
+                        <img class="img_country" src="img/country/usa.png" alt="usa">
+                    </div>
+                    <div class="label">
+                        USA
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="transportScreen">
+            <div class="title">Choose transport</div>
+            <div class="cards">
+                <div class="card" id="tractor">
+                    <div class="img">
+                        <img class="img_transport" src="img/transport/tractor.png" alt="tractor">
+                    </div>
+                </div>
+                <div class="card" id="rocket">
+                    <div class="img">
+                        <img class="img_transport" src="img/transport/rocket.png" alt="rocket">
+                    </div>
+                </div>
+                <div class="card" id="turbo">
+                    <div class="img">
+                        <img class="img_transport" src="img/transport/turbo.png" alt="turbo">
+                    </div>
+                </div>
+                <div class="card" id="car">
+                    <div class="img">
+                        <img class="img_transport" src="img/transport/car.png" alt="car">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="winScreen">
+            <img class="img_win" src="img/screens/win.png" alt="win">
+        </div>
+        <div id="failScreen">
+            <img class="img_win" src="img/screens/fail.png" alt="win">
+        </div>
+        <canvas id="myCanvas" width="1500" height="850"></canvas>
+        <script src="js/game.js"></script>
+    </body>
+</html>
