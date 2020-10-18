@@ -90,6 +90,12 @@ countryOptions.forEach((option) => {
   })
 });
 
+//audio
+const jump = new Audio();
+const winMusic = new Audio();
+jump.src = "audio/fly.mp3";
+winMusic.src = "audio/score.mp3";
+
 
 //keypress handler
 document.addEventListener("keydown", event => {
@@ -119,8 +125,10 @@ document.addEventListener("keydown", event => {
 //move pig up or down
 function jumpPig(direction) {
   if (direction === 1 && yPos > 40) {
+    jump.play();
     yPos -= jumpUp
   } else if (direction === -1 && yPos < canvas.height - pigHeight - jumpDown) {
+    jump.play();
     yPos += jumpDown
   }
 }
@@ -189,6 +197,7 @@ function draw() {
     // collision check
     if (checkCollision(x, y, name)) {
       if (name === codesford) {
+        winMusic.play();
         hide(canvas);
         show(win);
       } else {
