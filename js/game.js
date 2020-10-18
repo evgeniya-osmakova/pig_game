@@ -129,22 +129,22 @@ function jumpPig(direction) {
 const barriers = {
   fox: {
     name: fox,
-    x: 500,
+    x: 1000,
     y: 610
   },
   man: {
     name: man,
-    x: 1700,
+    x: 2000,
     y: 360
   },
   hole: {
     name: hole,
-    x: 1900,
+    x: 2600,
     y: 670,
   },
   codesford: {
     name: codesford,
-    x: 3700,
+    x: 3500,
     y: 150,
   },
 };

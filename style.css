@@ -89,7 +89,7 @@ canvas {
 }
 
 .cards {
-    width: 800px;
+    width: 700px;
     padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -99,8 +99,8 @@ canvas {
 }
 
 .card {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     padding: 20px;
     background: white;
     border-radius: 20px;
@@ -113,20 +113,20 @@ canvas {
 }
 
 .card:hover .label{
-    font-size: 24px;
+    font-size: 19px;
 }
 
 .img_occupation {
-    width: 250px;
+    width: 240px;
     height: 130px;
 }
 
 .label {
-    font-size: 22px;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 #countryScreen {
@@ -137,8 +137,8 @@ canvas {
 }
 
 .img_country {
-    width: 220px;
-    height: 180px;
+    width: 200px;
+    height: 160px;
 }
 
 .img {
@@ -156,8 +156,8 @@ canvas {
 }
 
 .img_transport {
-    width: 240px;
-    height: 230px;
+    width: 220px;
+    height: 210px;
 }
 
 #winScreen {
