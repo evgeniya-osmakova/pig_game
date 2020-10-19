@@ -98,7 +98,7 @@ winMusic.src = "audio/score.mp3";
 
 
 //keypress handler
-document.addEventListener("keydown", event => {
+document.addEventListener("keydown", (event) => {
   switch (event.code) {
     case 'ArrowLeft':
       movePig(-1);
@@ -121,6 +121,10 @@ document.addEventListener("keydown", event => {
   }
 });
 
+
+document.addEventListener(".mousedown", () => {
+  jumpPig(1);
+});
 
 //move pig up or down
 function jumpPig(direction) {
