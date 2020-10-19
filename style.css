@@ -95,7 +95,7 @@ canvas {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1vw;
+    gap: 3vw;
 }
 
 .card {
