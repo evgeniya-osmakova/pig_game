@@ -206,11 +206,13 @@ function draw() {
     if (checkCollision(x, y, name)) {
       if (name === codesford) {
         if (startGame) {
+          startGame = false;
           winMusic.play();
           hide(canvas);
           show(win);
         }
       } else {
+        startGame = false;
         hide(canvas);
         show(fail);
       }
