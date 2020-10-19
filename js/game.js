@@ -5,6 +5,7 @@ const fox = new Image();
 const hole = new Image();
 const man = new Image();
 const codesford = new Image();
+let startGame = false;
 
 //find canvas
 const canvas = document.getElementById("myCanvas");
@@ -77,6 +78,7 @@ countryOptions.forEach((option) => {
   option.addEventListener('click', () => {
     hide(country);
     show(canvas);
+    startGame = true;
     fox.src = "img/barriers/fox.png";
     hole.src = "img/barriers/hole.png";
     man.src = "img/barriers/man.png";
@@ -122,13 +124,13 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-document.addEventListener(".mousedown", () => {
+document.addEventListener("mousedown", () => {
   jumpPig(1);
 });
 
 //move pig up or down
 function jumpPig(direction) {
-  if (canvas.style.display !== "none") {
+  if (startGame) {
     if (direction === 1 && yPos > 40) {
       jump.play();
       yPos -= jumpUp
@@ -203,7 +205,7 @@ function draw() {
     // collision check
     if (checkCollision(x, y, name)) {
       if (name === codesford) {
-        if (canvas.style.display !== "none") {
+        if (startGame) {
           winMusic.play();
           hide(canvas);
           show(win);
