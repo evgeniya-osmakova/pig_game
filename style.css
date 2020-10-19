@@ -89,16 +89,17 @@ canvas {
 }
 
 .cards {
-    width: 70vh;
+    width: 90vh;
     padding-top: 1vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 3vw;
+/*     gap: 3vw; */
 }
 
 .card {
+    margin: 3vw;
     width: 23vh;
     height: 23vh;
     padding: 2vw;
