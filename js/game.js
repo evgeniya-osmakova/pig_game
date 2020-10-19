@@ -124,12 +124,14 @@ document.addEventListener("keydown", event => {
 
 //move pig up or down
 function jumpPig(direction) {
-  if (direction === 1 && yPos > 40) {
-    jump.play();
-    yPos -= jumpUp
-  } else if (direction === -1 && yPos < canvas.height - pigHeight - jumpDown) {
-    jump.play();
-    yPos += jumpDown
+  if (canvas.style.display !== "none") {
+    if (direction === 1 && yPos > 40) {
+      jump.play();
+      yPos -= jumpUp
+    } else if (direction === -1 && yPos < canvas.height - pigHeight - jumpDown) {
+      jump.play();
+      yPos += jumpDown
+    }
   }
 }
 
@@ -197,9 +199,11 @@ function draw() {
     // collision check
     if (checkCollision(x, y, name)) {
       if (name === codesford) {
-        winMusic.play();
-        hide(canvas);
-        show(win);
+        if (canvas.style.display !== "none") {
+          winMusic.play();
+          hide(canvas);
+          show(win);
+        }
       } else {
         hide(canvas);
         show(fail);
