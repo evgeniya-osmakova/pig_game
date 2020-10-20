@@ -9,8 +9,8 @@ body, html {
     font-family: 'Poppins', sans-serif;
 	width: 100%;
 	height: 100%;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	background: url(img/screens/background.png);
 	background-size: cover;
 }
@@ -28,7 +28,6 @@ canvas {
 }
 
 .form {
-    display: none;
     padding-top: 20vh;
     display: flex;
     flex-direction: column;
@@ -163,7 +162,6 @@ canvas {
 
 #winScreen {
     display: none;
-    background
 }
 
 .img_win {
@@ -173,7 +171,6 @@ canvas {
 
 #failScreen {
     display: none;
-    background
 }
 
 @media (orientation: landscape) {
