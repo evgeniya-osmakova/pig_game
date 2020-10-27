@@ -171,6 +171,14 @@ canvas {
     display: none;
 }
 
+#description1Screen {
+    display: none;
+}
+
+#description2Screen {
+    display: none;
+}
+
 @media (orientation: landscape) {
     .cards {
         gap: 2vw;

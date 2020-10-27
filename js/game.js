@@ -1,11 +1,14 @@
 //initial images
 const pig = new Image();
 const background = new Image();
+const russia = new Image();
 const fox = new Image();
 const hole = new Image();
 const man = new Image();
 const codesford = new Image();
+const cat = new Image();
 let startGame = false;
+let inRussia = true;
 
 //find canvas
 const canvas = document.getElementById("myCanvas");
@@ -40,6 +43,8 @@ const login = document.getElementById("loginScreen");
 const occupation = document.getElementById("occupationScreen");
 const country = document.getElementById("countryScreen");
 const transport = document.getElementById("transportScreen");
+const description1 = document.getElementById("description1Screen");
+const description2 = document.getElementById("description2Screen");
 const win = document.getElementById("winScreen");
 const fail = document.getElementById("failScreen");
 
@@ -77,18 +82,27 @@ transportOptions.forEach((option) => {
 countryOptions.forEach((option) => {
   option.addEventListener('click', () => {
     hide(country);
-    show(canvas);
-    startGame = true;
-    fox.src = "img/barriers/fox.png";
-    hole.src = "img/barriers/hole.png";
-    man.src = "img/barriers/man.png";
-    codesford.src = "img/codesford.png";
-    background.src = `img/background/${option.id}.png`;
-    // when background is loaded we can find background2X and draw on canvas
-    background.onload = () => {
-      background2X = background.width;
-      draw();
-    }
+    show(description1);
+    document.addEventListener('mousedown', () => {
+      hide(description1);
+      show(description2);
+      document.addEventListener('mousedown', () => {
+        hide(description2);
+        show(canvas);
+        startGame = true;
+        fox.src = "img/barriers/fox.png";
+        hole.src = "img/barriers/hole.png";
+        man.src = "img/barriers/man.png";
+        codesford.src = "img/codesford.png";
+        russia.src = "img/background/russia1.png";
+        background.src = `img/background/${option.id}.png`;
+        // when background is loaded we can find background2X and draw on canvas
+        background.onload = () => {
+          background2X = background.width;
+          draw();
+        }
+      });
+    });
   })
 });
 
@@ -145,22 +159,22 @@ function jumpPig(direction) {
 const barriers = {
   fox: {
     name: fox,
-    x: 1000,
+    x: 2000,
     y: 610
   },
   man: {
     name: man,
-    x: 2000,
+    x: 3000,
     y: 360
   },
   hole: {
     name: hole,
-    x: 2600,
+    x: 3600,
     y: 670,
   },
   codesford: {
     name: codesford,
-    x: 3500,
+    x: 4500,
     y: 150,
   },
 };
@@ -178,6 +192,7 @@ function moveBackground () {
   background1X -= backgroundSpeed;
   background2X -= backgroundSpeed;
   if (background1X <= -background.width) {
+    inRussia = false;
     background1X = 0;
     background2X = background.width;
   }
@@ -192,9 +207,15 @@ const checkCollision = (barrierX, barrierY, image) => {
 
 function draw() {
   //draw all images on canvas
-  ctx.drawImage(background, background1X, background1Y);
+  if (inRussia) {
+    ctx.drawImage(russia, background1X, background1Y);
+  } else {
+    ctx.drawImage(background, background1X, background1Y);
+  }
   ctx.drawImage(background, background2X, background2Y);
   ctx.drawImage(pig, xPos, yPos, pigWidth, pigHeight);
+
+  //draw all staticbarriers on canvas
 
   //draw all barriers on canvas
   allBarriers.forEach((key) => {
